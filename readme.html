@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>READ ME FILE</title>
+  
+  <h1>READ ME FIRST!   </h1>
+
+This repo contains 2 R scripts and a codebook.
+<ul>
+<li> run_analysis.R is the main script. You must set the working directory at the original path of the data folders. This is, once you UNZIP the file, go to the UCI HAR Dataset FOLDER and set this one as the WORKING DIRECTORY. Either use the setwd() command or do it through the GUI in RStudio or R
+<li> getting_summarised_tiby_data.R is a script that must run AFTER the run_analysis.R script. It will create a smaller data set where you could see the mean values of the MEASUREMENTS for each activity and each subject.
+<li>codebook  describes the final variable names, their units etc.
+
+<h3>Going from raw data to tidy data </h3>
+
+<ol>
+
+<li>First of all, download the zip file from the following URL: <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"> https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a>  </li>
+<li>Unzip the file and set the working directory in R (or RStudio) as the <b>UCI HAR Dataset</b> folder</li>
+<li>Source the run_analysis.R script. This script is the main one and it does the following steps:<ol>
+<li>It reads the files <i>activity_labels.txt</i> and <i>features.txt</i>. It collects from features the names of some of the variables (the mean and the std of the tBodyAccXYZ, tBodyGyroXYZ and tGravityAccXYZ)
+<li>Later it goes to each subfolder (train and test subfolders) and read the subject files (that is, a file with numbers from 1 to 30 which identify the subjects of the experiment), the feature data (it collects only the mean and std described in the previous step), and the activities vector (a file with numbers from 1 to 6 for each measurement).
+<li>The activities file is later changed from integer labesl to string labels using the convention described in the activity_labels.txt file. It set the names to lowercase and remove all characters like undersocre, dots, etc
+<li>The subject column remains untouched, it is always formed by integers from 1 to 30.
+<li>The scripts goes to the <i>Inertial Signals</i> folder, where the actual measurements are stored.
+<li>All the files are read and combined into a data frame with 1152 columns (128 columns per file x 9 files)
+<li>It does the same steps for the second folder
+<li>After both folders are scanned and files are read, the final data frame with 1172 variables is built (it is called full_df). Also a data table is built with the data.table package.
+<li>The names for the final data frame are set
+<li>As a fnal step, all the R objects are removed, leaving only the <i><b>full_df data frame and its table version</b></i>
+</ol></li>
+<li>Once the script ends, you will have a data frame called full_df. <b>There is no filtering by mean or std parameters</b>.
+<li>After this script finishes, you can run the <i>getting_summarised_tidy_data.R</i> script in order to get a data frame that shows the mean of each measurement for each activity and subject. 
+<li>This data frame has 180 rows and 1154 columns. The first column is the activity, the second is the subject label and the rest are the mean values
+</ol>
+
+  </head>
+  <body>
+
+  </body>
+</html>

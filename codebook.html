@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>Codebook</title>
+  <h1>Codebook</h1>
+  The tidy data frame contains the following variables
+  <ul>
+  <li> Column 1: <b>activities</b>  in 6 levels named "standing","sitting","laying","walking","walkingdownstairs" and [6] "walkingupstairs". This column comes from the files called  <i>y_train.txt and y_test.txt</i>
+  The integer labels are transformed using the following convention: 1 for WALKING, 2 for WALKING_UPSTAIRS, 3 for WALKING_DOWNSTAIRS, 4 for SITTING, 5 for STANDING and 6 for LAYING </li>
+   <li> Column 2: <b>subject</b> labels, integers from 1 to 30 extracted from the files <i>subject_train.txt and subject_test.txt </i>. The integers were kept.
+   <li>Column 3 to 8: <b>tBodyAccmeanX, tBodyAccmeanY, tBodyAccmeanZ, tBodyAccstdX, tBodyAccstdY and tBodyAccstdZ</b>. These are the mean and standard deviation for the measurements of the Body acceleration in XYZ direction. Since they are kept equal to the raw data, the range of the data is -1 to 1. It is normalized.
+   <li>Column 9 to 14: <b>tBodyGyromeanX, tBodyGyromeanY, tBodyGyromeanZ, tBodyGyrostdX, tBodyGyrostdY and  tBodyGyrostdZ</b>. These are the mean and standard deviation for the measurements of the GYRO  in XYZ direction. Since they are kept equal to the raw data, the range of the data is -1 to 1. It is normalized.
+    <li>Column 15 to 20: <b>tGravityAccmeanX, tGravityAccmeanY, tGravityAccmeanZ, tGravityAccstdX, tGravityAccstdY and tGravityAccstdZ</b>. These are the mean and standard deviation for the measurements of the Body acceleration without the gravity effect, in XYZ direction. Since they are kept equal to the raw data, the range of the data is -1 to 1. It is normalized.
+    <li>Columns <b>bodyaccx1 (21) to bodyaccx128 (148)</b>: the full measurements 128 long vector for the acceleration of the body in g units in the X direction.
+    <li>Columns <b>bodyaccy1 (149) to bodyaccy128 (276)</b>: the full measurements 128 long vectorfor the acceleration of the body in g units in the Y direction.
+    <li>Columns <b>bodyaccz1 (277) to bodyaccz128 (404)</b>: the full measurements 128 long vector for the acceleration of the body in g units in the Z direction.
+    <li>Columns <b>bodygyrox1 (405) to bodygyrox128 (532)</b>: the full measurements 128 long vector for the gyro of the body in radians/second for rotations in the X direction.
+    <li>Columns <b>bodygyroy1 (533) to bodygyroy128(660)</b>: the full measurements 128 long vector for the gyro of the body in radians/second for rotations in the Y direction.
+    <li> Columns <b>bodygyroz1 (661) to bodygyroz128(788)</b>: the full measurements 128 long vector for the gyro of the body in radians/second for rotations in the Z direction.
+    <li> Columns <b>totalaccx1 (789) to totalaccx128(916)</b>: the full measurements 128 long vector for the acceleration (body acceleration plus gravity), in g units in the X direction
+    <li> Columns <b>totalaccy1 (917) to totalaccy128(1044)</b>: the full measurements 128 long vector for the acceleration (body acceleration plus gravity), in g units in the Y direction
+    <li> Columns <b>totalaccz1 (1045) to totalaccz128(1172)</b>: the full measurements 128 long vector for the acceleration (body acceleration plus gravity), in g units in the Z direction
+  </ul>
+  <h3>Note</h3>
+  <b>The data frame was NOT filtered by the mean and std as the assingment said. </b>
+  </head>
+  <body>
+
+  </body>
+</html>
